@@ -9,6 +9,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link href="css/style.css" rel="stylesheet">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Weather App</title>
   </head>
 <header>
@@ -33,7 +34,7 @@
         </div>
         </header>
     <br>
-       <div id="weather-div" class="container" style="visibility: hidden">
+       <div id="notHide" class="container" style="visibility: hidden">
 
       <div class="row">
         <div class="col-sm text-center tacos">
@@ -41,8 +42,8 @@
             <div class="card-header tacos">
               City
             </div>
-            <div class="city card-body">
-              <p></p>
+            <div class="card-body">
+              <b><p id="city"></p></b>
             </div>
           </div>
         </div>
@@ -56,17 +57,17 @@
             <div class="card-group">
               <div class="card">
                 <div class="card-body bg-danger">
-                  <p class="kelvin card-text tacos">K</p>
+                  <p class="card-text tacos" id="kelvin">K</p>
                 </div>
               </div>
               <div class="card">
                 <div class="card-body bg-danger">
-                  <p class="celcius card-text tacos">°C</p>
+                  <p class="card-text tacos" id="celcius">°C</p>
                 </div>
               </div>
               <div class="card">
                 <div class="card-body bg-danger">
-                  <p class="fahrenheit card-text tacos">°F</p>
+                  <p class="card-text tacos" id="tempF">°F</p>
                 </div>
               </div>
             </div>
@@ -79,8 +80,8 @@
             <div class="card-header tacos">
               Conditions
             </div>
-            <div class="conditions card-body">
-              <p></p>
+            <div class="card-body">
+              <p id="conditions"></p>
             </div>
           </div>
         </div>
@@ -92,7 +93,7 @@
               Other Info
             </div>
             <div class="card-body">
-              <img src="" class="icon" id="icon">
+              <img src="" class="img-fluid" id="icon">
             </div>
           </div>
         </div>
