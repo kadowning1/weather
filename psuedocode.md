@@ -71,3 +71,17 @@ let weatherState = {}
 ---
 
 ### Psuedocode
+
+- establish variables (above)
+
+- event listener for click
+
+- get zip from user
+
+- make api call
+
+- add data to fields from API data
+
+- create error function
+
+- create image function

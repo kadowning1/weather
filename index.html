@@ -1,118 +1,129 @@
 <!doctype html>
 <html lang="en">
 
-  <head>
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link href="css/style.css" rel="stylesheet">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Weather App</title>
-  </head>
+</head>
 <header>
-  <body class="tacos">
 
-    <div class="container overflow-auto text-center" id="headingDiv">
-      <div class="row">
-          <div class="clearfix">
-        <h1 class="col-sm-12">Current Weather App</h1>
-      <br>
-      <div class="row">
-        <div class="form-group">
-          <input type="input" class="form-control justify-content-center" id="ZipCode" placeholder="Zip Code">
-        
-        <br>
+    <body class="tacos">
 
-        <button id="btn" type="submit" class="btn btn-danger">Get Weather</button>
-      </div>
-    </div>
-    </div>
-      </div>
+        <div class="container overflow-auto text-center" id="headingDiv">
+            <div class="row">
+                <div class="clearfix">
+                    <h1 class="col-sm-12">Current Weather App</h1>
+                    <br>
+                    <div class="row">
+                        <div class="form-group">
+                            <input type="input" class="form-control justify-content-center" id="ZipCode"
+                                placeholder="Zip Code">
+
+                            <br>
+
+                            <button id="btn" type="submit" class="btn btn-danger">Get Weather</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div id="hopeForError" style="visibility: hidden">
+                <p><b>Please Enter A Valid 5 Digit Zip Code</b></p>
+
+            </div>
         </div>
-        </header>
-    <br>
-       <div id="notHide" class="container" style="visibility: hidden">
+</header>
+<br>
+<div id="notHide" class="container" style="visibility: hidden">
 
-      <div class="row">
+    <div class="row">
         <div class="col-sm text-center tacos">
-          <div class="card text-dark bg-danger">
-            <div class="card-header tacos">
-              City
-            </div>
-            <div class="card-body">
-              <b><p id="city"></p></b>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm text-center">
-          <div class="text-dark bg-danger">
-            <div class="card-header tacos">
-              Tempurature
-            </div>
-            <div class="card-group">
-              <div class="card">
-                <div class="card-body bg-danger">
-                  <p class="card-text tacos" id="kelvin">K</p>
+            <div class="card text-dark bg-danger">
+                <div class="card-header tacos">
+                    City
                 </div>
-              </div>
-              <div class="card">
-                <div class="card-body bg-danger">
-                  <p class="card-text tacos" id="celcius">°C</p>
+                <div class="card-body">
+                    <b>
+                        <p id="city"></p>
+                    </b>
                 </div>
-              </div>
-              <div class="card">
-                <div class="card-body bg-danger">
-                  <p class="card-text tacos" id="tempF">°F</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm text-center">
+            <div class="text-dark bg-danger">
+                <div class="card-header tacos">
+                    Temperature
                 </div>
-              </div>
+                <div class="card-group">
+                    <div class="card">
+                        <div class="card-body bg-danger">
+                            <p class="card-text tacos" id="kelvin">K</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body bg-danger">
+                            <p class="card-text tacos" id="celcius">°C</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body bg-danger">
+                            <p class="card-text tacos" id="tempF">°F</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-      <div class="row">
+    </div>
+    <div class="row">
         <div class="col-sm text-center">
-          <div class="card text-dark bg-danger mb-3">
-            <div class="card-header tacos">
-              Conditions
+            <div class="card text-dark bg-danger mb-3">
+                <div class="card-header tacos">
+                    Conditions
+                </div>
+                <div class="card-body">
+                    <p id="conditions"></p>
+                </div>
             </div>
-            <div class="card-body">
-              <p id="conditions"></p>
-            </div>
-          </div>
         </div>
-      </div>
-      <div class="row">
+    </div>
+    <div class="row">
         <div class="col-sm text-center">
-          <div class="card text-dark bg-danger mb-3">
-            <div class="card-header tacos">
-              Other Info
+            <div class="card text-dark bg-danger mb-3">
+                <div class="card-header tacos">
+                    Other Info
+                </div>
+                <div class="card-body">
+                    <img src="" class="img-fluid" id="icon">
+                </div>
             </div>
-            <div class="card-body">
-              <img src="" class="img-fluid" id="icon">
-            </div>
-          </div>
         </div>
-      </div>
-  
-   
-   
+    </div>
+
+
+
 
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
     -->
-  </body>
+    </body>
 
 </html>
-
