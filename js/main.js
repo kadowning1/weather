@@ -25,6 +25,7 @@ const otherInfo = document.getElementById('icon');
 let errorAlert = document.getElementById("hopeForError");
 const notHide = document.getElementById("notHide");
 const apiLink = "https://api.openweathermap.org/data/2.5/weather?zip=90210,us&appid=225e9979cafa7faa49ef4c637d23e637";
+var enterButton = document.getElementById("ZipCode");
 
 
 //const apiKey = 'dff15a790b3d74473adbc0e2022a8491';
@@ -41,6 +42,20 @@ let zipInput = '';
 
 //event listener for click
 btn.addEventListener("click", startWeather);
+
+// Get the input field
+
+// Execute a function when the user releases a key on the keyboard
+enterButton.addEventListener("keyup", function(event) {
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    btn.click();
+  }
+});
+
 //make API call
 function startWeather() {
     let zipInput = document.getElementById('ZipCode').value;
